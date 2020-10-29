@@ -1,5 +1,5 @@
 {
-  "name": "powerbi-visuals-utils-formattingutils",
+  "name": "@mogulargmbh/powerbi-visuals-utils-formattingutils",
   "version": "4.7.0",
   "description": "FormattingUtils",
   "main": "lib/src/index.js",
@@ -31,7 +31,8 @@
     "pretest": "npm run lint",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lintfix": "tslint -r \"node_modules/tslint-microsoft-contrib\"  \"+(src|test)/**/*.ts\" --fix",
-    "lessc": "lessc src/styles/style.less lib/index.css"
+    "lessc": "lessc src/styles/style.less lib/index.css",
+    "autolink": "npm link powerbi-visuals-utils-dataviewutils && npm link powerbi-visuals-utils-typeutils"
   },
   "devDependencies": {
     "@types/jasmine": "3.5.11",

@@ -285,7 +285,7 @@ export class FormattingService implements IFormattingService {
             return (<any>(<any>powerbi).common).cultureInfo;
         }
 
-        return (<any>window.navigator).userLanguage || window.navigator["language"] || "en-US";
+        return ((typeof window !== "undefined" && <any>window.navigator).userLanguage) || (typeof window !== "undefined" && window.navigator["language"]) || "en-US";
     }
 
     /**
@@ -293,6 +293,8 @@ export class FormattingService implements IFormattingService {
      *  @param name: queryString name
      */
     public getUrlParam(name: string): string {
+        if(typeof window === "undefined")
+            return null;
         let param = window.location.search.match(RegExp("[?&]" + name + "=([^&]*)"));
         return param ? param[1] : undefined;
     }
